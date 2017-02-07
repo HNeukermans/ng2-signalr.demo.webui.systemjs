@@ -1,18 +1,26 @@
 <div class="container-fluid" style="margin-top: 1rem;">
 <div class="row">
   <div class="col-lg-6">
-    <chat-cmp (onMessage)="onChatMessage($event)" [messages]="chatMessages"  ></chat-cmp>
+    <chat-cmp (onMessage)="onChatMessage($event)" [messages]="chatMessages"></chat-cmp>
   </div>
   <!-- /.col-lg-8 -->
   <div class="col-lg-6">
     <div class="card card-default">
       <div class="card-header">
-        <i class="fa fa-bell fa-fw"></i> Code
+        <tabset>
+          <tab heading="Client" (select)="setClientCode()"></tab>
+          <tab heading="Server" (select)="setServerCode()"></tab>
+          <tab heading="Unit test" (select)="setUnitTestCode()"></tab>
+        </tabset>
       </div>
+       <pre>{{ content }}</pre>
+
+
       <!-- /.card-header -->
 
       <!-- /.card-body -->
     </div>
+
     <!-- /.card -->
 
     <!--<chat-cmp></chat-cmp>-->

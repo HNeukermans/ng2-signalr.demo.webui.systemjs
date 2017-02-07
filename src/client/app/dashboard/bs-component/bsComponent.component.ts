@@ -28,7 +28,7 @@ export class BSComponentComponent {
 	public radioModel:string = 'Middle';
 	public checkModel:any = {left: false, middle: true, right: false};
 
-	// Dropdown 
+	// Dropdown
 	public disabled:boolean = false;
 	public status:{isopen:boolean} = {isopen: false};
 	public items: Array<string> = ['The first choice!', 'And another choice for you.', 'but wait! A third!'];
