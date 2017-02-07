@@ -10,6 +10,14 @@ import { LoginModule } from './login/login.module';
 import { SignupModule } from './signup/signup.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SharedModule } from './shared/shared.module';
+import { SignalRModule, SignalRConfiguration } from 'ng2-signalr';
+
+let signalrConfiguration = new SignalRConfiguration();
+signalrConfiguration.hubName = 'Ng2SignalRHub';
+signalrConfiguration.logging = true;
+signalrConfiguration.url = 'http://ng2-signalr-backend.azurewebsites.net/';
+signalrConfiguration.qs = { user: 'donald' };
+
 
 @NgModule({
 	imports: [
@@ -19,7 +27,8 @@ import { SharedModule } from './shared/shared.module';
 		LoginModule,
 		SignupModule,
 		DashboardModule,
-		SharedModule.forRoot()
+    SharedModule.forRoot(),
+    SignalRModule.configure(signalrConfiguration)
 	],
 	declarations: [AppComponent],
 	providers: [{
