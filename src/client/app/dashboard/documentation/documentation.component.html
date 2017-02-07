@@ -1,7 +1,7 @@
 <div class="container-fluid" style="margin-top: 1rem;">
 <div class="row">
   <div class="col-lg-6">
-    <chat-cmp></chat-cmp>
+    <chat-cmp (onMessage)="onChatMessage($event)" [messages]="chatMessages"  ></chat-cmp>
   </div>
   <!-- /.col-lg-8 -->
   <div class="col-lg-6">

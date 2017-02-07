@@ -21,7 +21,7 @@
           </p>
         </div>
       </li>
-      <li class="right clearfix">
+      <li *ngFor="let message of messages" class="right clearfix">
         <span class="chat-img pull-right">
                     <img src="http://lorempixel.com/60/60/people/9" alt="User Avatar" class="img-circle">
                 </span>
@@ -29,10 +29,10 @@
           <div class="header">
             <small class=" text-muted">
               <i class="fa fa-clock-o fa-fw"></i> 13 mins ago</small>
-            <strong class="pull-right primary-font">Bhaumik Patel</strong>
+            <strong class="pull-right primary-font">{{ message.user }}</strong>
           </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor.
+            {{ message.content }}
           </p>
         </div>
       </li>
@@ -41,9 +41,9 @@
   <!-- /.card-body -->
   <div class="card-footer">
     <div class="input-group">
-      <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here...">
+      <input id="btn-input" type="text" class="form-control input-sm" [(ngModel)]="message"  placeholder="Type your message here...">
       <span class="input-group-btn">
-                <button class="btn btn-warning btn-sm" id="btn-chat">
+                <button class="btn btn-warning btn-sm" id="btn-chat" (click)="send()">
                     Send
                 </button>
             </span>
