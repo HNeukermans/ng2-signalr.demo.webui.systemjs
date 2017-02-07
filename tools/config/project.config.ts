@@ -24,6 +24,7 @@ export class ProjectConfig extends SeedConfig {
     this.NPM_DEPENDENCIES = [
       ...this.NPM_DEPENDENCIES,
       { src: 'font-awesome/css/font-awesome.css', inject: true },
+      { src: 'prismjs/themes/prism-tomorrow.css', inject: true },
       { src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       { src: 'highcharts/highcharts.js', inject: 'libs' },
       { src: 'signalr/jquery.signalR.min.js', inject: 'libs' },
@@ -37,7 +38,7 @@ export class ProjectConfig extends SeedConfig {
       ...this.APP_ASSETS,
       { src: `${this.CSS_SRC}/app.css`, inject: true, vendor: false },
       // {src: `${this.APP_SRC}/your-path-to-lib/libs/jquery-ui.js`, inject: true, vendor: false}
-      { src: `${this.CSS_SRC}/prismjs/prism-tomorrow.css`, inject: true, vendor: false },
+      //{ src: `${this.CSS_SRC}/prismjs/prism-tomorrow.css`, inject: true, vendor: true },
     ];
 
     /* Add to or override NPM module configurations: */
