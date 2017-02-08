@@ -1,0 +1,10 @@
+"use strict";
+var index_1 = require('./index');
+exports.SignupRoutes = [
+    {
+        path: 'signup',
+        component: index_1.SignupComponent
+    }
+];
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zaWdudXAvc2lnbnVwLnJvdXRlcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0Esc0JBQWdDLFNBQVMsQ0FBQyxDQUFBO0FBRTdCLG9CQUFZLEdBQVk7SUFDbEM7UUFDRSxJQUFJLEVBQUUsUUFBUTtRQUNkLFNBQVMsRUFBRSx1QkFBZTtLQUMzQjtDQUNILENBQUMiLCJmaWxlIjoiYXBwL3NpZ251cC9zaWdudXAucm91dGVzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgUm91dGUgfSBmcm9tICdAYW5ndWxhci9yb3V0ZXInO1xyXG5pbXBvcnQgeyBTaWdudXBDb21wb25lbnQgfSBmcm9tICcuL2luZGV4JztcclxuXHJcbmV4cG9ydCBjb25zdCBTaWdudXBSb3V0ZXM6IFJvdXRlW10gPSBbXHJcbiAgXHR7XHJcbiAgICBcdHBhdGg6ICdzaWdudXAnLFxyXG4gICAgXHRjb21wb25lbnQ6IFNpZ251cENvbXBvbmVudFxyXG4gIFx0fVxyXG5dO1xyXG4iXX0=

@@ -1,0 +1,45 @@
+<div class="container-fluid" style="margin-top: 1rem;">
+<div class="row">
+  <div class="col-lg-6">
+    <chat-cmp (onMessage)="onChatMessage($event)" [messages]="chatMessages"></chat-cmp>
+  </div>
+  <!-- /.col-lg-8 -->
+  <div class="col-lg-6">
+    <div class="card card-default">
+      <div class="card-header">
+        <tabset>
+          <tab heading="page.ts" (select)="showListenClientCode()"></tab>
+          <tab heading="page.spec.ts" (select)="showListenSpecCode()"></tab>
+          <tab heading="chat.message.ts" (select)="showChatMessageCode()"></tab>
+          <tab heading="Hub.cs" (select)="showListenServerCode()"></tab>
+        </tabset>
+      </div>
+      <div class="code-editor">
+        <pre>
+          <code class="language-javascript" [innerHTML]="listenCode">
+
+          </code>
+        </pre>
+      </div>
+
+      <div class="card-header">
+        <tabset>
+          <tab heading="page.ts" (select)="showChatClientCode()"></tab>
+          <tab heading="page.spec.ts" (select)="showChatSpecCode()"></tab>
+          <tab heading="Hub.cs" (select)="showChatServerCode()"></tab>
+        </tabset>
+      </div>
+      <div class="code-editor">
+        <pre>
+          <code class="language-javascript" [innerHTML]="chatCode">
+
+          </code>
+        </pre>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.col-lg-4 -->
+</div>
+</div>

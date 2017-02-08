@@ -1,0 +1,10 @@
+"use strict";
+var index_1 = require('./index');
+exports.TableRoutes = [
+    {
+        path: 'tables',
+        component: index_1.TableComponent
+    },
+];
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9kYXNoYm9hcmQvdGFibGVzL3RhYmxlLnJvdXRlcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBRUEsc0JBQStCLFNBQVMsQ0FBQyxDQUFBO0FBRTVCLG1CQUFXLEdBQVk7SUFDbkM7UUFDQyxJQUFJLEVBQUUsUUFBUTtRQUNkLFNBQVMsRUFBRSxzQkFBYztLQUN6QjtDQUNELENBQUMiLCJmaWxlIjoiYXBwL2Rhc2hib2FyZC90YWJsZXMvdGFibGUucm91dGVzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgUm91dGUgfSBmcm9tICdAYW5ndWxhci9yb3V0ZXInO1xyXG5cclxuaW1wb3J0IHsgVGFibGVDb21wb25lbnQgfSBmcm9tICcuL2luZGV4JztcclxuXHJcbmV4cG9ydCBjb25zdCBUYWJsZVJvdXRlczogUm91dGVbXSA9IFtcclxuXHR7XHJcblx0XHRwYXRoOiAndGFibGVzJyxcclxuXHRcdGNvbXBvbmVudDogVGFibGVDb21wb25lbnRcclxuXHR9LFxyXG5dO1xyXG4iXX0=
