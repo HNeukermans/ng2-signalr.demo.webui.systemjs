@@ -8,46 +8,37 @@
     <div class="card card-default">
       <div class="card-header">
         <tabset>
-          <tab heading="Client" (select)="setClientCode()"></tab>
-          <tab heading="Server" (select)="setServerCode()"></tab>
-          <tab heading="Unit test" (select)="setUnitTestCode()"></tab>
+          <tab heading="page.ts" (select)="showListenClientCode()"></tab>
+          <tab heading="page.spec.ts" (select)="showListenSpecCode()"></tab>
+          <tab heading="chat.message.ts" (select)="showChatMessageCode()"></tab>
+          <tab heading="Hub.cs" (select)="showListenServerCode()"></tab>
         </tabset>
       </div>
-       <pre>{{ content }}</pre>
+      <div class="code-editor">
+        <pre>
+          <code class="language-javascript" [innerHTML]="listenCode">
 
-        <div class="code-editor">
-    <pre>
-				<code class="language-javascript">
-import {{ '{' }} Resolve } from '@angular/router';
-import {{ '{' }} SignalR, SignalRConnection } from 'ng2-signalr';
-import {{ '{' }} Injectable } from '@angular/core';
+          </code>
+        </pre>
+      </div>
 
-@Injectable()
-export class ConnectionResolver implements Resolve{{ '<' }}SignalRConnection> {{ '{' }}
+      <div class="card-header">
+        <tabset>
+          <tab heading="page.ts" (select)="showChatClientCode()"></tab>
+          <tab heading="page.spec.ts" (select)="showChatSpecCode()"></tab>
+          <tab heading="Hub.cs" (select)="showChatServerCode()"></tab>
+        </tabset>
+      </div>
+      <div class="code-editor">
+        <pre>
+          <code class="language-javascript" [innerHTML]="chatCode">
 
-    constructor(private _signalR: SignalR)  {{ '{' }}
+          </code>
+        </pre>
+      </div>
 
-     resolve() {{ '{' }}
-        console.log('HomeRouteResolver. Resolving...');
-        return this._signalR.connect();
-    }
-
-}
-
-
-
-</code></pre>
-  </div>
-
-      <!-- /.card-header -->
-
-      <!-- /.card-body -->
     </div>
 
-    <!-- /.card -->
-
-    <!--<chat-cmp></chat-cmp>-->
-    <!-- /.card .chat-card -->
   </div>
   <!-- /.col-lg-4 -->
 </div>
