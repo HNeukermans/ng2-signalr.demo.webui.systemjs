@@ -23,7 +23,12 @@ gulp.task('build.dev', (done: any) =>
               'build.html_css',
               'build.js.dev',
               'build.index.dev',
+    done));
+
+gulp.task('copy.server', (done: any) =>
+  runSequence('copy.server',
               done));
+
 
 // --------------
 // Build dev watch.
