@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard.component';
 
 import {TopNavComponent} from '../shared/index';
 import {SidebarComponent} from '../shared/index';
+import { DevSetupModule } from './dev-setup/devSetup.module';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {SidebarComponent} from '../shared/index';
         GridModule,
     	BSComponentModule,
         BSElementModule,
-        DocumentationModule
+      DocumentationModule,
+        DevSetupModule
     ],
     declarations: [DashboardComponent, TopNavComponent, SidebarComponent],
     exports: [DashboardComponent, TopNavComponent, SidebarComponent]

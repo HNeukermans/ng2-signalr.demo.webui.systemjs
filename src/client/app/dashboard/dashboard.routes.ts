@@ -10,6 +10,7 @@ import { BSComponentRoutes } from './bs-component/index';
 import { BSElementRoutes } from './bs-element/index';
 
 import { DashboardComponent } from './index';
+import { DevSetupRoutes } from './dev-setup/devSetupComponent.routes';
 
 export const DashboardRoutes: Route[] = [
   	{
@@ -20,7 +21,8 @@ export const DashboardRoutes: Route[] = [
 	    	...ChartRoutes,
 	    	...BSComponentRoutes,
         ...TableRoutes,
-	    	...DocumentationRoutes,
+        ...DocumentationRoutes,
+        ...DevSetupRoutes,
         ...FormRoutes,
         ...GridRoutes,
         ...BSElementRoutes

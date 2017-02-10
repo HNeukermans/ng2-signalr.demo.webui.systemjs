@@ -38,7 +38,10 @@ export class DocumentationComponent  implements AfterViewChecked, OnDestroy {
     this._subscription = onMessageSent$.subscribe((chatMessage: ChatMessage) => {
       this.chatMessages.push(chatMessage);
     });
-  }
+
+    this.showChatClientCode();
+    this.showListenClientCode();
+ }
 
   ngOnDestroy() {
     console.log('ngOnDestroy');
@@ -53,12 +56,12 @@ export class DocumentationComponent  implements AfterViewChecked, OnDestroy {
 
   showChatClientCode() {
     let code = `
-// send chat message to server
-chat() {
-  this._connection.invoke('Chat', new ChatMessage('Hannes', message))
-    .catch((err:any) => console.log('Failed to invoke \'Chat\'. Error occured. Error:' + err));
-  }
-}`;
+      // send chat message to server
+      chat() {
+        this._connection.invoke('Chat', new ChatMessage('Hannes', message))
+          .catch((err:any) => console.log('Failed to invoke \'Chat\'. Error occured. Error:' + err));
+        }
+      }`;
     this.chatCode = Prism.highlight(code, Prism.languages.javascript);
   }
 
@@ -89,6 +92,7 @@ it('chat() should invoke Chat with message',
     this.chatCode = Prism.highlight(code, Prism.languages.javascript);
 
   }
+
 
   showListenServerCode() {
     let code = `

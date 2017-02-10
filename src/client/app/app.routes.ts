@@ -5,10 +5,9 @@ import { SignupRoutes } from './signup/index';
 import { DashboardRoutes } from './dashboard/index';
 
 import { LoginComponent } from './login/index';
+import { DevSetupComponent } from './dashboard/dev-setup/devSetup.component';
 
 export const routes: Routes = [
-	...LoginRoutes,
-	...SignupRoutes,
 	...DashboardRoutes,
 	{ path: '**', component: LoginComponent }
 ];

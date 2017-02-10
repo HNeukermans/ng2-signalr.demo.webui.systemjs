@@ -3,8 +3,11 @@
 </button>
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
     <ul class="list-group">
+       <a [routerLink]="['setup']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i> &nbsp;Setup
+        </a>
        <a [routerLink]="['documentation']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-th-list"></i> &nbsp;Documentation
+            <i class="fa fa-th-list"></i> &nbsp;Chat
         </a>
 
         <a routerLink="/dashboard/home" [routerLinkActive]="['router-link-active']" class="list-group-item">
