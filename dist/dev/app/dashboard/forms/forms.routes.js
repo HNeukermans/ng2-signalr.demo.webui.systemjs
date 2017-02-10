@@ -1,0 +1,10 @@
+"use strict";
+var index_1 = require('./index');
+exports.FormRoutes = [
+    {
+        path: 'forms',
+        component: index_1.FormComponent
+    },
+];
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9kYXNoYm9hcmQvZm9ybXMvZm9ybXMucm91dGVzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFFQSxzQkFBOEIsU0FBUyxDQUFDLENBQUE7QUFFM0Isa0JBQVUsR0FBWTtJQUNsQztRQUNDLElBQUksRUFBRSxPQUFPO1FBQ2IsU0FBUyxFQUFFLHFCQUFhO0tBQ3hCO0NBQ0QsQ0FBQyIsImZpbGUiOiJhcHAvZGFzaGJvYXJkL2Zvcm1zL2Zvcm1zLnJvdXRlcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFJvdXRlIH0gZnJvbSAnQGFuZ3VsYXIvcm91dGVyJztcclxuXHJcbmltcG9ydCB7IEZvcm1Db21wb25lbnQgfSBmcm9tICcuL2luZGV4JztcclxuXHJcbmV4cG9ydCBjb25zdCBGb3JtUm91dGVzOiBSb3V0ZVtdID0gW1xyXG5cdHtcclxuXHRcdHBhdGg6ICdmb3JtcycsXHJcblx0XHRjb21wb25lbnQ6IEZvcm1Db21wb25lbnRcclxuXHR9LFxyXG5dO1xyXG4iXX0=

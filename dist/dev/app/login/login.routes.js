@@ -1,0 +1,10 @@
+"use strict";
+var index_1 = require('./index');
+exports.LoginRoutes = [
+    {
+        path: '',
+        component: index_1.LoginComponent
+    }
+];
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9sb2dpbi9sb2dpbi5yb3V0ZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBLHNCQUErQixTQUFTLENBQUMsQ0FBQTtBQUU1QixtQkFBVyxHQUFZO0lBQ2pDO1FBQ0UsSUFBSSxFQUFFLEVBQUU7UUFDUixTQUFTLEVBQUUsc0JBQWM7S0FDMUI7Q0FDSCxDQUFDIiwiZmlsZSI6ImFwcC9sb2dpbi9sb2dpbi5yb3V0ZXMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBSb3V0ZSB9IGZyb20gJ0Bhbmd1bGFyL3JvdXRlcic7XHJcbmltcG9ydCB7IExvZ2luQ29tcG9uZW50IH0gZnJvbSAnLi9pbmRleCc7XHJcblxyXG5leHBvcnQgY29uc3QgTG9naW5Sb3V0ZXM6IFJvdXRlW10gPSBbXHJcbiAgXHR7XHJcbiAgICBcdHBhdGg6ICcnLFxyXG4gICAgXHRjb21wb25lbnQ6IExvZ2luQ29tcG9uZW50XHJcbiAgXHR9XHJcbl07XHJcbiJdfQ==

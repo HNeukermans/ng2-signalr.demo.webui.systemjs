@@ -72,7 +72,7 @@ public void Chat(ChatMessage message)
 {
     //do stuff
     ....
-}`
+}`;
     this.chatCode = Prism.highlight(code, Prism.languages.javascript);
   }
 
@@ -88,7 +88,7 @@ it('chat() should invoke Chat with message',
 
     expect(connectionMock.invoke)
       .toHaveBeenCalledWith('Chat', jasmine.objectContaining({ content: component.message }));
-  }));`
+  }));`;
     this.chatCode = Prism.highlight(code, Prism.languages.javascript);
 
   }
@@ -101,7 +101,7 @@ public void xxx(ChatMessage message)
 {
     // broadcast to all clients
     Clients.All.OnMessageSent(new ChatMessage('Hannes', 'Message'));
-}`
+}`;
     this.listenCode = Prism.highlight(code, Prism.languages.javascript);
   }
 
@@ -121,7 +121,7 @@ it('ngInit() should listen for broadcast event',
     expect(connectionMock.listeners['OnMessageSent'].observers.length)
       .toBe(1);
 
-}));`
+}));`;
 
   this.listenCode = Prism.highlight(code, Prism.languages.javascript);
 
@@ -150,7 +150,7 @@ ngOnInit() {
     let code = `
 export class ChatMessage {
   constructor(public user: string, public content: string) {
-}`
+}`;
     this.listenCode = Prism.highlight(code, Prism.languages.javascript);
   }
 
