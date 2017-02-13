@@ -40,7 +40,7 @@ signalrConfiguration.qs = { user: 'donald' };
   declarations: [AppComponent],
   providers: [ConnectionResolver],
   bootstrap: [AppComponent]
-  });`
+  });`;
       this.code = Prism.highlight(code, Prism.languages.javascript);
   }
 
@@ -59,7 +59,7 @@ export class ConnectionResolver implements Resolve<SignalRConnection> {
     console.log('ConnectionResolver. Resolving...');
     return this._signalR.connect();
   }
-}`
+}`;
       this.code = Prism.highlight(code, Prism.languages.javascript);
   }
 
@@ -77,7 +77,7 @@ export const DocumentationRoutes: Route[] = [
     component: DocumentationComponent,
      resolve: { connection: ConnectionResolver }
 	}
-];`
+];`;
       this.code = Prism.highlight(code, Prism.languages.javascript);
   }
 
@@ -91,7 +91,7 @@ import { SignalRConnection } from 'ng2-signalr';
 @Component({
   moduleId: module.id,
   selector: 'chat',
-  templateUrl: './chat.component.html'
+  template: './chat.component.html'
 })
 
 export class ChatComponent {
@@ -100,7 +100,7 @@ export class ChatComponent {
   constructor(route: ActivatedRoute) {
     this._connection = route.snapshot.data['connection'];
   }
-}`
+}`;
     this.code = Prism.highlight(code, Prism.languages.javascript);
   }
 
@@ -129,6 +129,7 @@ public class Ng2SignalRHub : Hub
 
             return username;
         }
+<<<<<<< HEAD
 }`
       this.code = Prism.highlight(code, Prism.languages.javascript);
   }
@@ -156,6 +157,9 @@ describe('Documentation', () => {
     });
   });
 });`
+=======
+}`;
+>>>>>>> 7008a391ae5fccf85b040f256eb9fc4ba58fa4ee
       this.code = Prism.highlight(code, Prism.languages.javascript);
   }
 
