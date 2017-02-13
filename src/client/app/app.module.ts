@@ -15,7 +15,7 @@ import { SignalRModule, SignalRConfiguration } from 'ng2-signalr';
 let signalrConfiguration = new SignalRConfiguration();
 signalrConfiguration.hubName = 'Ng2SignalRHub';
 signalrConfiguration.logging = true;
-signalrConfiguration.url = 'http://ng2-signalr-backend.azurewebsites.net/';
+signalrConfiguration.url =   'http://ng2-signalr-backend.azurewebsites.net/'; //'http://localhost:10772/';//
 signalrConfiguration.qs = { user: 'donald' };
 
 

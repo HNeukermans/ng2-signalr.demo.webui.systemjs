@@ -46,6 +46,7 @@ export class DocumentationComponent  implements AfterViewChecked, OnDestroy {
   ngOnDestroy() {
     console.log('ngOnDestroy');
     this._subscription.unsubscribe();
+    this._connection.stop();
   }
 
   onChatMessage(message: string) {

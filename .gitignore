@@ -35,15 +35,14 @@ typings
 .vscode
 *.iml
 
+
 /tools/**/*.js
-/dist/tmp
-/dist/dev/**/*.*
 
 docs
 lib
 test
 tmp
-dev
+\dist\dev\**\*.*
 
 gulpfile.js
 gulpfile.js.map

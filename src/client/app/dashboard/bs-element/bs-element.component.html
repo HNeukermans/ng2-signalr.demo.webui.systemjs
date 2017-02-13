@@ -7,9 +7,9 @@
       </div>
        <div class="checkbox">
                         <label>
-                            <input type="checkbox" value="">Join group 1
+                            <input type="checkbox" [(ngModel)]="isConx1Joined" (ngModelChange)="changeIsJoined('Conx1', isConx1Joined)">Join group 1
                         </label>
-                        <chat-cmp></chat-cmp>
+                        <chat-cmp (onMessage)="chat('Conx1', $event)" [messages]="conx1Messages"></chat-cmp>
                     </div>
     </div>
   </div>
@@ -20,9 +20,9 @@
       </div>
       <div class="checkbox">
                         <label>
-                            <input type="checkbox" value="true">Join group 1
+                              <input type="checkbox" [(ngModel)]="isConx2Joined" (ngModelChange)="changeIsJoined('Conx2', isConx2Joined)">Join group 1
                         </label>
-                         <chat-cmp></chat-cmp>
+                         <chat-cmp (onMessage)="chat('Conx2', $event)" [messages]="conx2Messages"></chat-cmp>
                     </div>
     </div>
   </div>
