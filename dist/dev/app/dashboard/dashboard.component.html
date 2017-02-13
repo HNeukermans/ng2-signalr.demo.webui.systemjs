@@ -1,5 +1,15 @@
 <top-nav></top-nav>
 <sidebar-cmp></sidebar-cmp>
 <section class="main-container" [ngClass]="{sidebarPushRight: isActive}">
-	<router-outlet></router-outlet>
+  <div *ngIf="isBusy === true">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+  <div [hidden]="isBusy === true">
+    <router-outlet></router-outlet>
+  </div>
+
 </section>

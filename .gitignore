@@ -36,12 +36,14 @@ typings
 *.iml
 
 /tools/**/*.js
-dist/tmp
+/dist/tmp
+/dist/dev/**/*.*
 
 docs
 lib
 test
 tmp
+dev
 
 gulpfile.js
 gulpfile.js.map

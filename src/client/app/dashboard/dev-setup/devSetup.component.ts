@@ -129,8 +129,7 @@ public class Ng2SignalRHub : Hub
 
             return username;
         }
-<<<<<<< HEAD
-}`
+}`;
       this.code = Prism.highlight(code, Prism.languages.javascript);
   }
 
@@ -156,10 +155,8 @@ describe('Documentation', () => {
       ]
     });
   });
-});`
-=======
-}`;
->>>>>>> 7008a391ae5fccf85b040f256eb9fc4ba58fa4ee
+});`;
+
       this.code = Prism.highlight(code, Prism.languages.javascript);
   }
 

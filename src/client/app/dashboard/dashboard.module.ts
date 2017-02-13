@@ -16,8 +16,9 @@ import { BSElementModule } from './bs-element/bsElement.module';
 import { DashboardComponent } from './dashboard.component';
 
 import {TopNavComponent} from '../shared/index';
-import {SidebarComponent} from '../shared/index';
+import { SidebarComponent } from '../shared/index';
 import { DevSetupModule } from './dev-setup/devSetup.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { DevSetupModule } from './dev-setup/devSetup.module';
     	BSComponentModule,
         BSElementModule,
       DocumentationModule,
-        DevSetupModule
+        DevSetupModule,
+        FormsModule
     ],
     declarations: [DashboardComponent, TopNavComponent, SidebarComponent],
     exports: [DashboardComponent, TopNavComponent, SidebarComponent]

@@ -1,8 +1,8 @@
 import { Component, AfterViewChecked, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SignalRConnection, BroadcastEventListener } from 'ng2-signalr';
-import { ChatMessage } from './chat.message';
 import { Subscription } from 'rxjs/Subscription';
+import { ChatMessage } from '../../shared/chat/chat.message';
 
 declare var Prism: any;
 

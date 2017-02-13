@@ -4,15 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { NameListService } from './name-list/index';
+import { ChatComponent } from './chat/chat';
 
 /**
 * Do not specify providers for modules that might be imported by a lazy loaded module.
 */
 
 @NgModule({
-    imports: [CommonModule, RouterModule],
-    declarations: [],
-    exports: [CommonModule, FormsModule, RouterModule]
+    imports: [CommonModule, RouterModule, FormsModule],
+    declarations: [ChatComponent],
+    exports: [CommonModule, FormsModule, RouterModule, ChatComponent]
 })
 
 export class SharedModule {
