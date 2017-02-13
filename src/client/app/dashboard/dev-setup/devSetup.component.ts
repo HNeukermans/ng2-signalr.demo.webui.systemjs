@@ -129,11 +129,70 @@ public class Ng2SignalRHub : Hub
 
             return username;
         }
-}
-
-`
+}`
       this.code = Prism.highlight(code, Prism.languages.javascript);
   }
+
+   showUnitTestCode() {
+     let code =  `
+import { inject, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SignalRConnectionMock } from 'ng2-signalr';
+import { MockActivatedRoute } from './activated.route.mock';
+
+describe('Documentation', () => {
+
+  let connectionMock = new SignalRConnectionMock();
+  let activatedRouteMock = new MockActivatedRoute();
+  activatedRouteMock.snapshot.data = { 'connection': connectionMock };
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        DocumentationComponent,
+        { provide: ActivatedRoute, useValue: activatedRouteMock }
+      ]
+    });
+  });
+});`
+      this.code = Prism.highlight(code, Prism.languages.javascript);
+  }
+
+     showRouteMockCode() {
+     let code =  `
+import { Observable } from 'rxjs';
+import { Type } from '@angular/core';
+import { ActivatedRoute, Route, ActivatedRouteSnapshot, UrlSegment, Params, Data } from '@angular/router';
+
+export class MockActivatedRoute implements ActivatedRoute{
+    snapshot: ActivatedRouteSnapshot;
+    url: Observable<UrlSegment[]>;
+    params: Observable<Params>;
+    queryParams: Observable<Params>;
+    fragment: Observable<string>;
+    data: Observable<Data>;
+    outlet: string;
+    component: Type<any>|string;
+    routeConfig: Route;
+    root: ActivatedRoute;
+    parent: ActivatedRoute;
+    firstChild: ActivatedRoute;
+    children: ActivatedRoute[];
+    pathFromRoot: ActivatedRoute[];
+    toString(): string{
+        return '';
+    };
+
+    constructor() {
+      this.snapshot = new ActivatedRouteSnapshot();
+    }
+}`
+      this.code = Prism.highlight(code, Prism.languages.javascript);
+  }
+
+
+
 
   ngOnDestroy() {
     console.log('ngOnDestroy');
