@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { SignalRConnection, BroadcastEventListener } from 'ng2-signalr';
 import { ChatMessage } from '../../shared/chat/chat.message';
 import { Subscription } from 'rxjs/Subscription';
+import { Subject } from'rxjs/Subject';
 
 @Component({
   moduleId: module.id,
@@ -16,6 +17,12 @@ export class BSElementComponent  implements OnDestroy {
   public isConx2Joined: boolean = true;
   public conx1Messages: ChatMessage[] = [];
   public conx2Messages: ChatMessage[] = [];
+  public onConx1Keyup$: Subject<string> = new Subject<string>();
+  public onConx2Keyup$: Subject<string> = new Subject<string>();
+
+  public conn1PeerIsTyping$: Subject<boolean> = new Subject<boolean>();
+  public conn2PeerIsTyping$: Subject<boolean> = new Subject<boolean>();
+
   private _connection1: SignalRConnection = null;
   private _connection2: SignalRConnection = null;
   private _subscription1: Subscription;
@@ -33,9 +40,14 @@ export class BSElementComponent  implements OnDestroy {
     let onConn1MessageSent$ = new BroadcastEventListener<ChatMessage>('OnRoomMessageSent');
     let onConn2MessageSent$ = new BroadcastEventListener<ChatMessage>('OnRoomMessageSent');
 
+    let onConn1KeyUp$ = new BroadcastEventListener<string>('OnRoomKeyupSent');
+    let onConn2KeyUp$ = new BroadcastEventListener<string>('OnRoomKeyupSent');
+
     // register the listener
     this._connection1.listen(onConn1MessageSent$);
     this._connection2.listen(onConn2MessageSent$);
+    this._connection1.listen(onConn1KeyUp$);
+    this._connection2.listen(onConn2KeyUp$);
 
     // subscribe to event
     this._subscription1 = onConn1MessageSent$.subscribe((chatMessage: ChatMessage) => {
@@ -45,7 +57,30 @@ export class BSElementComponent  implements OnDestroy {
     this._subscription2 = onConn2MessageSent$.subscribe((chatMessage: ChatMessage) => {
       this.conx2Messages.push(chatMessage);
     });
+
+    this._subscription1 = onConn1KeyUp$.subscribe((status: string) => {
+      console.log('onConn1KeyUp event received. : '+ status);
+      let show = status === 'started' ? true : false;
+      this.conn1PeerIsTyping$.next(show);
+    });
+
+    this._subscription2 = onConn2KeyUp$.subscribe((status: string) => {
+      console.log('onConn2KeyUp event received. : ' + status);
+      let show = status === 'started' ? true : false;
+       this.conn2PeerIsTyping$.next(show);
+    });
+
+    this.onConx1Keyup$.subscribe((text) => {
+      let status = text === '' ? 'stopped' : 'started';
+      this._connection1.invoke('KeyupInRoom', status);
+    });
+
+    this.onConx2Keyup$.subscribe((text) => {
+      let status = text === '' ? 'stopped' : 'started';
+      this._connection1.invoke('KeyupInRoom', status);
+    });
   }
+
 
   changeIsJoined(connection: string, isJoined: boolean) {
     console.log('connection: ' + connection);

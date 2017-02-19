@@ -10,11 +10,16 @@ export class ChatComponent {
 
     message: string = '';
     @Output() onMessage = new EventEmitter();
+    @Output() onTextChanged = new EventEmitter();
     @Input() messages: ChatMessage[] = [];
 
     send() {
       console.log('send');
       this.onMessage.emit(this.message);
       this.message = '';
+    }
+
+    onMessageChanged() {
+      this.onTextChanged.emit(this.message);
     }
 }

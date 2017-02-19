@@ -2,28 +2,28 @@
 <div class="row">
   <div class="col-lg-6">
     <div class="card card-default">
-        <div class="card-header">
-       Connection 1
+      <div class="card-header">
+        Connection 1
       </div>
-       <div class="checkbox">
-                        <label>
-                            <input type="checkbox" [(ngModel)]="isConx1Joined" (ngModelChange)="changeIsJoined('Conx1', isConx1Joined)">Join group 1
-                        </label>
-                        <chat-cmp (onMessage)="chat('Conx1', $event)" [messages]="conx1Messages"></chat-cmp>
-                    </div>
+      <div class="checkbox">
+        <label>
+            <input type="checkbox" [(ngModel)]="isConx1Joined" (ngModelChange)="changeIsJoined('Conx1', isConx1Joined)">Join group 1
+        </label>
+        <chat-cmp (onMessage)="chat('Conx1', $event)" (onTextChanged)="onConx1Keyup$.next($event)" [messages]="conx1Messages"></chat-cmp>
+      </div>
     </div>
   </div>
   <div class="col-lg-6">
     <div class="card card-default">
-        <div class="card-header">
-       Connection 2
+      <div class="card-header">
+        Connection 2
       </div>
       <div class="checkbox">
-                        <label>
-                              <input type="checkbox" [(ngModel)]="isConx2Joined" (ngModelChange)="changeIsJoined('Conx2', isConx2Joined)">Join group 1
-                        </label>
-                         <chat-cmp (onMessage)="chat('Conx2', $event)" [messages]="conx2Messages"></chat-cmp>
-                    </div>
+        <label>
+              <input type="checkbox" [(ngModel)]="isConx2Joined" (ngModelChange)="changeIsJoined('Conx2', isConx2Joined)">Join group 1
+        </label>
+        <chat-cmp (onMessage)="chat('Conx2', $event)" (onTextChanged)="onConx2Keyup$.next($event)" [messages]="conx2Messages"></chat-cmp>
+      </div>
     </div>
   </div>
 </div>
