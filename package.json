@@ -1,5 +1,5 @@
 {
-  "name": "ng2-signalr",
+  "name": "ng2-signalr.demo.webui.systemjs",
   "version": "0.0.0",
   "description": "Modular seed project for Angular 2 apps with fast, statically typed build",
   "repository": {
