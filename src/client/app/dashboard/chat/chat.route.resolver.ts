@@ -1,5 +1,5 @@
 import { Resolve } from '@angular/router';
-import { SignalR, SignalRConnection } from 'ng2-signalr';
+import { SignalR, SignalRConnection, ConnectionOptions } from 'ng2-signalr';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -9,6 +9,7 @@ export class ConnectionResolver implements Resolve<SignalRConnection> {
 
   resolve() {
     console.log('ConnectionResolver. Resolving...');
-    return this._signalR.connect();
+    let options : ConnectionOptions = {};
+    return this._signalR.connect(options);
   }
 }

@@ -8,11 +8,11 @@ declare var Prism: any;
 
 @Component({
   moduleId: module.id,
-  selector: 'documentation',
-  templateUrl: './documentation.component.html'
+  selector: 'chat',
+  templateUrl: './chat.component.html'
 })
 
-export class DocumentationComponent  implements AfterViewChecked, OnDestroy {
+export class ChatComponent  implements AfterViewChecked, OnDestroy {
 
   public chatMessages: ChatMessage[] = [];
   public listenCode: string = '';
@@ -73,21 +73,21 @@ public void Chat(ChatMessage message)
 {
     //do stuff
     ....
-}`
+}`;
     this.chatCode = Prism.highlight(code, Prism.languages.javascript);
   }
 
   showChatSpecCode() {
     let code = `
 it('chat() should invoke Chat with message',
-  inject([DocumentationComponent], (component: DocumentationComponent) => {
+  inject([ChatComponent], (component: ChatComponent) => {
 
-    spyOn(connectionMock, 'invoke').and.returnValue(Promise.resolve([]));
+    spyOn(connectionMockManager.mock, 'invoke').and.returnValue(Promise.resolve([]));
 
     component.message = 'My message';
     component.chat();
 
-    expect(connectionMock.invoke)
+    expect(connectionMockManager.mock.invoke)
       .toHaveBeenCalledWith('Chat', jasmine.objectContaining({ content: component.message }));
   }));`
     this.chatCode = Prism.highlight(code, Prism.languages.javascript);
@@ -110,19 +110,19 @@ public void xxx(ChatMessage message)
 
     let code = `
 it('ngInit() should listen for broadcast event',
-  inject([DocumentationComponent], (component: DocumentationComponent) => {
+  inject([ChatComponent], (component: ChatComponent) => {
 
-    spyOn(connectionMock, 'listen').and.callThrough();
+    spyOn(connectionMockManager.mock, 'listen').and.callThrough();
 
     component.ngOnInit();
 
-    expect(connectionMock.listen)
+    expect(connectionMockManager.mock.listen)
       .toHaveBeenCalledWith(jasmine.objectContaining({ event: 'OnMessageSent' }));
 
-    expect(connectionMock.listeners['OnMessageSent'].observers.length)
+    expect(connectionMockManager.invokeListeners['OnMessageSent'].observers.length)
       .toBe(1);
 
-}));`
+}));`;
 
   this.listenCode = Prism.highlight(code, Prism.languages.javascript);
 

@@ -68,13 +68,13 @@ export class ConnectionResolver implements Resolve<SignalRConnection> {
     let code =  `
 // we use the resolver to resolve 'connection' when navigation to the chat page
 import { Route } from '@angular/router';
-import { DocumentationComponent } from './index';
-import { ConnectionResolver } from './documentation.route.resolver';
+import { ChatComponent } from './index';
+import { ConnectionResolver } from './chat.route.resolver';
 
-export const DocumentationRoutes: Route[] = [
+export const ChatRoutes: Route[] = [
 	{
-		path: 'documentation',
-    component: DocumentationComponent,
+     path: 'chat',
+     component: ChatComponent,
      resolve: { connection: ConnectionResolver }
 	}
 ];`;
@@ -138,19 +138,18 @@ public class Ng2SignalRHub : Hub
 import { inject, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SignalRConnectionMock } from 'ng2-signalr';
-import { MockActivatedRoute } from './activated.route.mock';
+import { SignalRConnectionMockManager, ActivatedRouteMock } from 'ng2-signalr';
 
-describe('Documentation', () => {
+describe('Chat', () => {
 
-  let connectionMock = new SignalRConnectionMock();
-  let activatedRouteMock = new MockActivatedRoute();
-  activatedRouteMock.snapshot.data = { 'connection': connectionMock };
+  let connectionMockManager = new SignalRConnectionMockManager();
+  let activatedRouteMock = new ActivatedRouteMock();
+  activatedRouteMock.snapshot.data = { 'connection': connectionMockManager.mock };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        DocumentationComponent,
+        ChatComponent,
         { provide: ActivatedRoute, useValue: activatedRouteMock }
       ]
     });
@@ -160,37 +159,6 @@ describe('Documentation', () => {
       this.code = Prism.highlight(code, Prism.languages.javascript);
   }
 
-     showRouteMockCode() {
-     let code =  `
-import { Observable } from 'rxjs';
-import { Type } from '@angular/core';
-import { ActivatedRoute, Route, ActivatedRouteSnapshot, UrlSegment, Params, Data } from '@angular/router';
-
-export class MockActivatedRoute implements ActivatedRoute{
-    snapshot: ActivatedRouteSnapshot;
-    url: Observable<UrlSegment[]>;
-    params: Observable<Params>;
-    queryParams: Observable<Params>;
-    fragment: Observable<string>;
-    data: Observable<Data>;
-    outlet: string;
-    component: Type<any>|string;
-    routeConfig: Route;
-    root: ActivatedRoute;
-    parent: ActivatedRoute;
-    firstChild: ActivatedRoute;
-    children: ActivatedRoute[];
-    pathFromRoot: ActivatedRoute[];
-    toString(): string{
-        return '';
-    };
-
-    constructor() {
-      this.snapshot = new ActivatedRouteSnapshot();
-    }
-}`
-      this.code = Prism.highlight(code, Prism.languages.javascript);
-  }
 
 
 

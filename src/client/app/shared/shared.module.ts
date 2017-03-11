@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { NameListService } from './name-list/index';
 import { ChatComponent } from './chat/chat';
 
 /**
@@ -20,7 +19,6 @@ export class SharedModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: SharedModule,
-            providers: [NameListService]
         };
     }
 }

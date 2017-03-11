@@ -1,0 +1,26 @@
+<div class="container-fluid" style="margin-top: 1rem;">
+<div class="row">
+  <!-- /.col-lg-8 -->
+  <div class="col-lg-10">
+    <div class="card card-default">
+      <div class="card-header">
+        <tabset>
+          <tab heading="setup" (select)="showSetupCode()"></tab>
+          <tab heading="verify subscription" (select)="showVerifySubscriptionCode()"></tab>
+          <tab heading="simulate server event" (select)="showServerEventSimulationCode()"></tab>
+        </tabset>
+      </div>
+      <div class="code-editor">
+        <pre>
+          <code class="language-javascript" [innerHTML]="chatCode">
+
+          </code>
+        </pre>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.col-lg-4 -->
+</div>
+</div>

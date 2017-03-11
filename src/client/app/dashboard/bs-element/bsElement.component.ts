@@ -37,17 +37,11 @@ export class BSElementComponent  implements OnDestroy {
     this.changeIsJoined('Conx1', this.isConx1Joined);
     this.changeIsJoined('Conx2', this.isConx2Joined);
 
-    let onConn1MessageSent$ = new BroadcastEventListener<ChatMessage>('OnRoomMessageSent');
-    let onConn2MessageSent$ = new BroadcastEventListener<ChatMessage>('OnRoomMessageSent');
-
-    let onConn1KeyUp$ = new BroadcastEventListener<string>('OnRoomKeyupSent');
-    let onConn2KeyUp$ = new BroadcastEventListener<string>('OnRoomKeyupSent');
-
     // register the listener
-    this._connection1.listen(onConn1MessageSent$);
-    this._connection2.listen(onConn2MessageSent$);
-    this._connection1.listen(onConn1KeyUp$);
-    this._connection2.listen(onConn2KeyUp$);
+    let onConn1MessageSent$ = this._connection1.listenFor('OnRoomMessageSent');
+    let onConn2MessageSent$ = this._connection2.listenFor('OnRoomMessageSent');
+    let onConn1KeyUp$ = this._connection1.listenFor('OnRoomKeyupSent');
+    let onConn2KeyUp$ = this._connection2.listenFor('OnRoomKeyupSent');
 
     // subscribe to event
     this._subscription1 = onConn1MessageSent$.subscribe((chatMessage: ChatMessage) => {
@@ -79,6 +73,9 @@ export class BSElementComponent  implements OnDestroy {
       let status = text === '' ? 'stopped' : 'started';
       this._connection1.invoke('KeyupInRoom', status);
     });
+
+    console.log('logging the connection id: ' + this._connection1.id);
+    console.log('logging the connection id: ' + this._connection2.id);
   }
 
 
