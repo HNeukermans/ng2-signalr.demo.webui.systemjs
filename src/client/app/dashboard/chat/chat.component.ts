@@ -43,7 +43,6 @@ export class ChatComponent  implements AfterViewChecked, OnDestroy {
     this.showChatClientCode();
     this.showListenClientCode();
 
-     AppInsights.trackPageView('chat');
  }
 
   ngOnDestroy() {

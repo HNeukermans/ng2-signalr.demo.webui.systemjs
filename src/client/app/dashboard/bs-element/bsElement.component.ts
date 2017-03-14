@@ -80,7 +80,6 @@ export class BSElementComponent  implements OnDestroy {
     console.log('logging the connection id: ' + this._connection1.id);
     console.log('logging the connection id: ' + this._connection2.id);
 
-    AppInsights.trackPageView('groups');
   }
 
 

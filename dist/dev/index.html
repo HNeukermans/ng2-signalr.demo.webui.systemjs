@@ -1,63 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <base href="/">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Welcome to angular2-seed!</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- inject:css -->
-    <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.css?1489270126394">
-    <link rel="stylesheet" href="/node_modules/prismjs/themes/prism-tomorrow.css?1489270126394">
-    <link rel="stylesheet" href="/assets/sass/app.css?1489270126395">
-    <!-- endinject -->
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    ng2-signalr!
+  </title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.css?1489527026094">
+  <link rel="stylesheet" href="/node_modules/prismjs/themes/prism-tomorrow.css?1489527026095">
+  <link rel="stylesheet" href="/assets/sass/app.css?1489527026096">
+  <!-- endinject -->
 </head>
+
 <body>
 
-    <sd-app>
-        <div class="spinner">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
-        </div>
-    </sd-app>
+  <sd-app>
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </sd-app>
 
-    <script>
-    // Fixes undefined module function in SystemJS bundle
-    function module() {}
+  <script>
+      // Fixes undefined module function in SystemJS bundle
+      function module() { }
+
     </script>
+<script type="text/javascript" src="/assets/img/ai.js"></script>
+<script type="text/javascript">
+  var snippet = {
+    config: {
+      instrumentationKey: "17b22f89-9451-48ec-8e7b-1aed9b564d2b"
+    }
+  };
+  var init = new Microsoft.ApplicationInsights.Initialization(snippet);
+  var AppInsights = init.loadAppInsights();
+</script>
 
-    <!-- shims:js -->
-    <script src="/node_modules/core-js/client/shim.min.js?1489270126361"></script>
-    <script src="/node_modules/systemjs/dist/system.src.js?1489270126362"></script>
-    <!-- endinject -->
+<!-- shims:js -->
+<script src="/node_modules/core-js/client/shim.min.js?1489527026072"></script>
+<script src="/node_modules/systemjs/dist/system.src.js?1489527026073"></script>
+<!-- endinject -->
 
-    
-    <script src="/app/system-config.js"></script>
-    
+
+  <script src="/app/system-config.js"></script>
+  
 
     <!-- libs:js -->
-    <script src="/node_modules/zone.js/dist/zone.js?1489270126365"></script>
-    <script src="/node_modules/rxjs/bundles/Rx.min.js?1489270126366"></script>
-    <script src="/node_modules/jquery/dist/jquery.min.js?1489270126367"></script>
-    <script src="/node_modules/highcharts/highcharts.js?1489270126368"></script>
-    <script src="/node_modules/signalr/jquery.signalR.min.js?1489270126368"></script>
-    <script src="/node_modules/prismjs/prism.js?1489270126391"></script>
+    <script src="/node_modules/zone.js/dist/zone.js?1489527026076"></script>
+    <script src="/node_modules/rxjs/bundles/Rx.min.js?1489527026077"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js?1489527026078"></script>
+    <script src="/node_modules/highcharts/highcharts.js?1489527026079"></script>
+    <script src="/node_modules/signalr/jquery.signalR.min.js?1489527026079"></script>
+    <script src="/node_modules/prismjs/prism.js?1489527026080"></script>
     <!-- endinject -->
 
     <!-- inject:js -->
     <!-- endinject -->
 
     
-    <script>
-        System.import('app/main')
+      <script>
+      System.import('app/main')
         .catch(function (e) {
-            console.error(e,
-                'Report this error at https://github.com/mgechev/angular2-seed/issues');
+          console.error(e,
+            'Report this error at https://github.com/mgechev/angular2-seed/issues');
         });
     </script>
-    
 
-</body>
-</html>
+
+  </body>
+
+  </html>

@@ -23,7 +23,6 @@ export class DevSetupComponent  implements AfterViewChecked, OnDestroy {
   ngOnInit() {
     this.showModuleCode();
 
-    AppInsights.trackPageView('dev-setup');
   }
 
   showModuleCode() {
