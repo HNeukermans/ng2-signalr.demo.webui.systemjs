@@ -5,6 +5,9 @@ import { ChatMessage } from '../../shared/chat/chat.message';
 import { Subscription } from 'rxjs/Subscription';
 import { Subject } from'rxjs/Subject';
 
+
+declare var AppInsights: any;
+
 @Component({
   moduleId: module.id,
   selector: 'bs-element',
@@ -76,6 +79,8 @@ export class BSElementComponent  implements OnDestroy {
 
     console.log('logging the connection id: ' + this._connection1.id);
     console.log('logging the connection id: ' + this._connection2.id);
+
+    AppInsights.trackPageView('groups');
   }
 
 

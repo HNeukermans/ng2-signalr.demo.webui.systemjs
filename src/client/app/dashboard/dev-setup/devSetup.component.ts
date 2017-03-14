@@ -1,6 +1,7 @@
 import { Component, AfterViewChecked, OnDestroy } from '@angular/core';
-
+// import { AppInsights } from 'applicationinsights-js';
 declare var Prism: any;
+declare var AppInsights: any;
 
 @Component({
   moduleId: module.id,
@@ -21,6 +22,8 @@ export class DevSetupComponent  implements AfterViewChecked, OnDestroy {
 
   ngOnInit() {
     this.showModuleCode();
+
+    AppInsights.trackPageView('dev-setup');
   }
 
   showModuleCode() {

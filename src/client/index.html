@@ -23,7 +23,18 @@
     <script>
     // Fixes undefined module function in SystemJS bundle
     function module() {}
+
     </script>
+    <script type="text/javascript" src="/node_modules/applicationinsights-js/dist/ai.js"></script>
+<script type="text/javascript">
+    var snippet = {
+        config: {
+            instrumentationKey: "17b22f89-9451-48ec-8e7b-1aed9b564d2b"
+        }
+    };
+    var init = new Microsoft.ApplicationInsights.Initialization(snippet);
+    var AppInsights = init.loadAppInsights();
+</script>
 
     <!-- shims:js -->
     <!-- endinject -->

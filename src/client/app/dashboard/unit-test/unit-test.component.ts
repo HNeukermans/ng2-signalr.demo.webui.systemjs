@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { ChatMessage } from '../../shared/chat/chat.message';
 
 declare var Prism: any;
+declare var AppInsights: any;
 
 @Component({
   moduleId: module.id,
@@ -24,6 +25,7 @@ export class UnitTestComponent  implements AfterViewChecked, OnDestroy {
 
   ngOnInit() {
     this.showSetupCode();
+    AppInsights.trackPageView('unit test');
   }
 
   ngOnDestroy() {
@@ -119,6 +121,7 @@ import { inject, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SignalRConnectionMockManager, ActivatedRouteMock } from 'ng2-signalr';
+import { AppInsights } from 'applicationinsights-js';
 
 describe('Chat', () => {
 

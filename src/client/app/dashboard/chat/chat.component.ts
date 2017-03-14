@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { ChatMessage } from '../../shared/chat/chat.message';
 
 declare var Prism: any;
+declare var AppInsights: any;
 
 @Component({
   moduleId: module.id,
@@ -41,6 +42,8 @@ export class ChatComponent  implements AfterViewChecked, OnDestroy {
 
     this.showChatClientCode();
     this.showListenClientCode();
+
+     AppInsights.trackPageView('chat');
  }
 
   ngOnDestroy() {
